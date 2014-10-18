@@ -1,0 +1,9 @@
+if [ -f ~/.bash_profile ]; then
+   source ~/.bash_profile
+fi
+# Helpful aliases
+alias l='ls'
+alias la='ls -lh'
+alias ll='ls -lah'
+# Make ack output with less by default
+alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'

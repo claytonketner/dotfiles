@@ -1,0 +1,17 @@
+export LANG=en_US.iso88591
+#
+# Colors
+#
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+#
+# PATHs
+#
+export PATH=$PATH:~/bin
+#
+# Other
+#
+# Git autocompletion
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
