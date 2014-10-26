@@ -5,6 +5,8 @@ set tabstop=4 " Set tab size to 4
 set shiftwidth=4 " Set block indentation shifting
 set expandtab " Use spaces for indentation
 set autoindent " Match indentation of previous line
+set splitbelow " Create new sp's below
+set splitright " Create new vsp's to the right
 "set smartindent
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100) " Only put ruler on lines >80 cols
