@@ -17,3 +17,5 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " Save backups to ~/.vim/tmp
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
+" Highlight current line
+set cursorline
