@@ -1,0 +1,13 @@
+[user]
+	name = clayton
+	email = clayton@counsyl.com
+[branch]
+	autosetuprebase = always
+[push]
+	default = simple
+[alias]
+	s = status
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore_global
