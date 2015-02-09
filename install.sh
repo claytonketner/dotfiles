@@ -9,7 +9,8 @@ do
     if [ -f "$FILENAME" ] || [ $FILENAME != .git ] ; then
         CURRENT_DIR=`pwd -P`
         echo -e "${yellow}For $FILENAME${NC}"
-        if [ -f ~/$FILENAME ] ; then
+        # -h == symbolic link (linked file doesn't have to exist)
+        if [ -h ~/$FILENAME ] ; then
             echo -e "\t- Deleting old symlink"
             rm ~/$FILENAME
         fi
