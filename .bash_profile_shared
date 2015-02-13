@@ -21,4 +21,4 @@ if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
 # Global git ignore
-git config --global core.excludesfile ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_shared
