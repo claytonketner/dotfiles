@@ -8,3 +8,4 @@ alias wenv='source ../../.virtualenvs/default/bin/activate'
 alias setupreqs='cd ../../setup && fab setup_requirements && cd ../counsyl/product'
 # Make ack output with less by default
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
+alias less='less -R'
