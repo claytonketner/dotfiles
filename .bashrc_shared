@@ -4,7 +4,7 @@ alias la='ls -a'
 alias ll='ls -lah'
 # Website aliases
 alias venv='source .virtualenv/bin/activate'
-alias wenv='source ../../.virtualenvs/default/bin/activate'
+alias wenv='source ../../vendor/venv/bin/activate'
 alias setupreqs='cd ../../setup && fab setup_requirements && cd ../counsyl/product'
 # Make ack output with less by default
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
