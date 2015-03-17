@@ -9,6 +9,7 @@ set expandtab  " Use spaces for indentation
 set autoindent  " Match indentation of previous line
 " Filetype-specific tab settings
 autocmd FileType pp setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
 set splitbelow  " Create new sp's below
@@ -24,3 +25,4 @@ set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 set cursorline  " Highlight current line
 execute pathogen#infect()
+set shellcmdflag=-ic  " Make vim shell interactive
