@@ -6,6 +6,8 @@ alias ll='ls -lah'
 alias venv='source .virtualenv/bin/activate'
 alias wenv='source ../../vendor/venv/bin/activate'
 alias setupreqs='cd ../../setup && fab setup_requirements && cd ../counsyl/product'
+# Other aliases
+alias vagrantpuppet='puppet module build && puppet module install -f `ls -1t pkg/*.tar.gz | head -n 1` --modulepath ~/dev/vagrant/puppet/modules'
 # Make ack output with less by default
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
 alias less='less -R'
