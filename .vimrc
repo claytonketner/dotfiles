@@ -11,6 +11,7 @@ set autoindent  " Match indentation of previous line
 autocmd FileType pp setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 
 set splitbelow  " Create new sp's below
 set splitright  " Create new vsp's to the right
