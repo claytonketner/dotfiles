@@ -1,2 +1,4 @@
 .virtualenv
+.venv
+venv
 .DS_Store

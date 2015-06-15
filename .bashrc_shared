@@ -3,7 +3,7 @@ alias l='ls'
 alias la='ls -a'
 alias ll='ls -lah'
 # Website aliases
-alias venv='source .virtualenv/bin/activate || source .venv/bin/activate'
+alias venv='source .virtualenv/bin/activate || source venv/bin/activate || source .venv/bin/activate'
 alias wenv='source ../../vendor/venv/bin/activate'
 # Other aliases
 alias vagrantpuppet='puppet module build && puppet module install -f `ls -1t pkg/*.tar.gz | head -n 1` --modulepath ~/dev/vagrant/puppet/modules'
