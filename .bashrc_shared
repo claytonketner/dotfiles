@@ -3,10 +3,22 @@ alias l='ls'
 alias la='ls -a'
 alias ll='ls -lah'
 # Website aliases
-alias venv='source .virtualenv/bin/activate || source venv/bin/activate || source .venv/bin/activate'
 alias wenv='source ../../vendor/venv/bin/activate'
 # Other aliases
 alias vagrantpuppet='puppet module build && puppet module install -f `ls -1t pkg/*.tar.gz | head -n 1` --modulepath ~/dev/vagrant/puppet/modules'
 # Make ack output with less by default
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
 alias less='less -R'
+# Sourcing virtualenvs
+function venv
+{
+    depth=4
+    if [ $# -eq 0 ]; then
+        depth=$1
+    fi
+    for file in $( find . -type f -depth $depth -regex .*env.*/bin/activate | head -n 1 ); do
+        echo source $file
+        source $file
+        break
+    done
+}
