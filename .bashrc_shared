@@ -12,11 +12,11 @@ alias less='less -R'
 # Sourcing virtualenvs
 function venv
 {
-    depth=4
-    if [ $# -eq 0 ]; then
-        depth=$1
+    maxdepth=4
+    if [ $# -eq 1 ]; then
+        maxdepth=$1
     fi
-    for file in $( find . -type f -depth $depth -regex .*env.*/bin/activate | head -n 1 ); do
+    for file in $( find . -type f -maxdepth $maxdepth -regex .*env.*/bin/activate | head -n 1 ); do
         echo source $file
         source $file
         break
