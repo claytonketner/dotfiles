@@ -1,7 +1,7 @@
 yellow='\033[1;33m'
 NC='\033[0m'  # No Color
-BASHRC_SNIPPET="if [[ -f ~/.bashrc_shared ]]; then source ~/.bashrc_shared fi";
-BASH_PROFILE_SNIPPET="if [[ -f ~/.bash_profile_shared ]]; then source ~/.bash_profile_shared fi";
+BASHRC_SNIPPET="if [[ -f ~/.bashrc_shared ]]; then source ~/.bashrc_shared; fi";
+BASH_PROFILE_SNIPPET="if [[ -f ~/.bash_profile_shared ]]; then source ~/.bash_profile_shared; fi";
 
 echo "Installing files to home directory..."
 for FILENAME in .*
