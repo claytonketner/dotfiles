@@ -8,6 +8,7 @@ fi
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -lah'
+alias sourceall='source ~/.bashrc; source ~/.bash_profile'
 # Make ack output with less by default
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
 alias less='less -R'
