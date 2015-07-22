@@ -13,6 +13,9 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 # PATHs
 #
 export PATH=$PATH:~/bin
+export WORKON_HOME=~/.envs
+mkdir -p $WORKON_HOME
+source /usr/local/bin/virtualenvwrapper.sh
 #
 # Other
 #
