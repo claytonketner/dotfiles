@@ -1,4 +1,10 @@
 # Bash aliases
+if [ "$(uname)" == "Darwin" ]; then
+    # brew install coreutils
+    alias ls='gls --color -h --group-directories-first'
+else
+    alias ls='ls --color -h --group-directories-first'
+fi
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -lah'
@@ -9,7 +15,8 @@ alias vagrantpuppet='puppet module build && puppet module install -f `ls -1t pkg
 # Make ack output with less by default
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/local/bin/ack'
 alias less='less -R'
-# Sourcing virtualenvs
+# Virtualenv
+alias des='deactivate'  # Desactive
 function venv
 {
     maxdepth=4
