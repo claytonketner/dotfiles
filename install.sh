@@ -6,10 +6,10 @@ BASH_PROFILE_SNIPPET="if [[ -f ~/.bash_profile_shared ]]; then source ~/.bash_pr
 echo "Installing files to home directory..."
 for FILENAME in .*
 do
-    if [[ $FILENAME = . ]] || [[ $FILENAME = .. ]]; then
+    if [[ $FILENAME = . ]] || [[ $FILENAME = .. ]] || [[ $FILENAME = .git ]]; then
         continue
     fi
-    if [[ -f $FILENAME ]] || [[ $FILENAME != .git ]]; then
+    if [[ -f $FILENAME ]]; then
         CURRENT_DIR=`pwd -P`
         echo -e "${yellow}For $FILENAME:${NC}"
         # -h == symbolic link (linked file doesn't have to exist)
