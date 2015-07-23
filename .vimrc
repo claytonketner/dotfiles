@@ -25,5 +25,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 set cursorline  " Highlight current line
-execute pathogen#infect()
 set shellcmdflag=-ic  " Make vim shell interactive
+" Plugin stuff
+execute pathogen#infect()
+autocmd BufWritePost *.py call Flake8()  " Run flake8 on save
