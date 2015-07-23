@@ -44,3 +44,5 @@ vim -u NONE -c "helptags vim-fugitive/doc" -c q
 git clone git://github.com/tpope/vim-surround.git
 git clone git://github.com/tpope/vim-repeat.git
 git clone git@github.com:nvie/vim-flake8.git
+# Hackfix for vim-flake8 -- see https://github.com/nvie/vim-flake8/issues/13
+ln -s ~/.vim/bundle/vim-flake8/ftplugin/ ~/.vim/bundle/vim-flake8/plugin
