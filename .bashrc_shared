@@ -28,12 +28,20 @@ function venv
 }
 # Git
 function diffadd {
+    # Runs git add on the file(s) you just git diff-ed
     cmd=$(history | tail -n 2 | head -n 1 | sed "s/^ *[0-9]* *//g")
     if [[ ! $cmd == "git diff"* ]]; then
         echo "Invalid previous command"
         return
     fi
-    cmd=$(echo $cmd | sed "s/diff/add/g")
+    # Strip off the "git diff"
+    cmd=$(echo $cmd | sed "s/git diff//g")
+    prefix="git add"
+    for argument in "$@"
+    do
+        prefix="$prefix $argument"
+    done
+    cmd="$prefix $cmd"
     echo $cmd
     eval $cmd
 }
