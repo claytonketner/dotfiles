@@ -26,3 +26,14 @@ function venv
         break
     done
 }
+# Git
+function diffadd {
+    cmd=$(history | tail -n 2 | head -n 1 | sed "s/^ *[0-9]* *//g")
+    if [[ ! $cmd == "git diff"* ]]; then
+        echo "Invalid previous command"
+        return
+    fi
+    cmd=$(echo $cmd | sed "s/diff/add/g")
+    echo $cmd
+    eval $cmd
+}
