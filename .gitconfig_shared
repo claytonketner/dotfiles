@@ -4,10 +4,11 @@
 [branch]
 	autosetuprebase = always
 [push]
-	default = simple
+	default = simple  # For git 1.7, use upstream
 [alias]
 	s = status
     co = checkout
+    br = branch
     # Open all merge conflicts in vim
     fix = "!f() { vim -p `git diff --name-only --diff-filter=U`; }; f"
 [color]
