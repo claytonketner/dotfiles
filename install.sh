@@ -35,6 +35,13 @@ else
     echo "Leaving bash_profile as is."
 fi
 
+if [[ `git --version` == *"1.7"* ]]; then
+    echo "Detected old git version that doesn't support includes."
+    echo "Copying .gitconfig_shared to .gitconfig"
+    cp ~/.gitconfig_shared ~/.gitconfig
+    sed -i 's/default = simple/default = upstream/' ~/.gitconfig
+fi
+
 echo "Installing vim plugins..."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim

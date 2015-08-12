@@ -4,7 +4,7 @@
 [branch]
 	autosetuprebase = always
 [push]
-	default = simple  # For git 1.7, use upstream
+	default = simple
 [alias]
 	s = status
     co = checkout
