@@ -4,6 +4,7 @@ fi
 
 export LANG=en_US.UTF-8
 export EDITOR=vi
+export TERM=screen-256color
 #
 # Colors
 #
