@@ -3,8 +3,8 @@ if [ -f ~/.bashrc ]; then
 fi
 
 export LANG=en_US.UTF-8
-export EDITOR=vi
-export TERM=xterm-color
+export EDITOR=vim
+export TERM=xterm
 #
 # Colors
 #

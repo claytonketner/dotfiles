@@ -1,6 +1,7 @@
 syntax on  " Syntax highlighting
 set ruler  " Show row/col info
 set nu  " Row numbers
+set backspace=2  " Sane backspace behavior
 
 """ Tabs
 set tabstop=4  " Set tab size to 4
@@ -29,3 +30,4 @@ set shellcmdflag=-ic  " Make vim shell interactive
 " Plugin stuff
 execute pathogen#infect()
 autocmd BufWritePost *.py call Flake8()  " Run flake8 on save
+let g:vim_json_syntax_conceal = 0  " Don't do cute quote hiding for json

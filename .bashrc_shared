@@ -5,13 +5,16 @@ if [ "$(uname)" == "Darwin" ]; then
 else
     alias ls='ls --color -h --group-directories-first'
 fi
+hash -r
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -lah'
 alias sourceall='source ~/.bashrc; source ~/.bash_profile'
 alias tmux='tmux -2'
+alias vi=vim
 # Make ack output with less by default
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" ack'
+alias ag='ag --pager "less -x4SRFX"'
 alias less='less -R'
 # Virtualenv
 alias des='deactivate'  # Desactive
@@ -45,4 +48,13 @@ function diffadd {
     cmd="$prefix $cmd"
     echo $cmd
     eval $cmd
+}
+function brclean {
+    # Delete all merged branches, excluding master and the current branch
+    branches=$(git branch --merged master | grep -v master | grep -v \*)
+    if [[ ! $branches ]]; then
+        echo "No eligible branches to delete."
+        return
+    fi
+    git branch -d $branches
 }
