@@ -12,12 +12,13 @@ alias ll='ls -lah'
 alias sourceall='source ~/.bashrc; source ~/.bash_profile'
 alias tmux='tmux -2'
 alias vi=vim
+alias vimpipe='xargs -o vim'
 # Make ack output with less by default
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" ack'
 alias ag='ag --pager "less -x4SRFX"'
 alias less='less -R'
 # Virtualenv
-alias des='deactivate'  # Desactive
+alias de='deactivate'
 function venv
 {
     maxdepth=4
