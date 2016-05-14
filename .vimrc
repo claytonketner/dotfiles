@@ -13,6 +13,7 @@ autocmd FileType pp setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
+autocmd FileType make setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 set splitbelow  " Create new sp's below
 set splitright  " Create new vsp's to the right
