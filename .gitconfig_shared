@@ -6,10 +6,13 @@
 [push]
 	default = simple
 [alias]
-	s = status
+    st = status
     co = checkout
-    com = checkout master
+    ct = commit
     br = branch
+    com = checkout master
+    d = diff
+    ds = diff --staged
     # Open all merge conflicts in vim
     fix = "!f() { vim -p `git diff --name-only --diff-filter=U`; }; f"
 [color]
