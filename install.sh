@@ -44,6 +44,8 @@ if [[ `git --version` == *"1.7"* ]]; then
     sed -i 's/default = simple/default = upstream/' ~/.gitconfig
 fi
 
+echo "Installing tmux tpm"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "Installing vim plugins..."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
