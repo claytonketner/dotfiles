@@ -25,4 +25,4 @@ if [ -f ~/dots/.git-completion.bash ]; then
     . ~/dots/.git-completion.bash
 fi
 # Global git ignore
-git config --global core.excludesfile ~/dots/.gitignore_shared
+git config --global core.excludesfile ~/dots/.gitignore

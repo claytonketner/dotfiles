@@ -2,8 +2,8 @@
 
 yellow='\033[1;33m'
 NC='\033[0m'  # No Color
-BASHRC_SNIPPET="if [[ -f ~/dots/.bashrc_shared ]]; then source ~/dots/.bashrc_shared; fi";
-BASH_PROFILE_SNIPPET="if [[ -f ~/dots/.bash_profile_shared ]]; then source ~/dots/.bash_profile_shared; fi";
+BASHRC_SNIPPET="if [[ -f ~/dots/.bashrc ]]; then source ~/dots/.bashrc fi";
+BASH_PROFILE_SNIPPET="if [[ -f ~/dots/.bash_profile ]]; then source ~/dots/.bash_profile fi";
 
 echo "Installing files to home directory..."
 for FILENAME in *
@@ -39,8 +39,8 @@ fi
 
 if [[ `git --version` == *"1.7"* ]]; then
     echo "Detected old git version that doesn't support includes."
-    echo "Appending .gitconfig_shared to .gitconfig"
-    echo ~/.gitconfig_shared >> ~/.gitconfig
+    echo "Appending dots/.gitconfig to ~/.gitconfig"
+    echo dots/.gitconfig >> ~/.gitconfig
     sed -i 's/default = simple/default = upstream/' ~/.gitconfig
 fi
 

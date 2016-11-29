@@ -18,4 +18,4 @@
 [color]
 	ui = true
 [core]
-	excludesfile = ~/dots/.gitignore_shared
+	excludesfile = ~/dots/.gitignore
