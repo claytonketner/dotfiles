@@ -1,0 +1,4 @@
+#!/bin/bash
+
+current_dir=`pwd -P`
+echo "cd" $current_dir >> $VIRTUAL_ENV/bin/postactivate
