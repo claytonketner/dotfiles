@@ -8,7 +8,7 @@
 [alias]
     st = status
     co = checkout
-    ct = commit
+    ci = commit
     br = branch
     com = checkout master
     d = diff
@@ -18,4 +18,4 @@
 [color]
 	ui = true
 [core]
-	excludesfile = ~/.gitignore_shared
+	excludesfile = ~/dots/.gitignore_shared

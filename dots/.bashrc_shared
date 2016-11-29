@@ -13,6 +13,8 @@ alias sourceall='source ~/.bashrc; source ~/.bash_profile'
 alias tmux='tmux -2'
 alias vi=vim
 alias vimpipe='xargs -o vim'
+alias pipreqs='find . -name "requirements*" | xargs -n 1 pip install -r'
+alias tree='tree --dirsfirst'
 # Make ack output with less by default
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" ack'
 alias ag='ag --pager "less -x4SRFX"'
@@ -59,6 +61,7 @@ function brclean {
     fi
     git branch -d $branches
 }
+# Colorized man pages
 man() {
     env \
         LESS_TERMCAP_mb=$(printf "\e[1;31m") \

@@ -23,6 +23,7 @@ set splitbelow  " Create new sp's below
 set splitright  " Create new vsp's to the right
 set laststatus=2  " Put info bar at bottom of screen
 set hlsearch  " Highlight all matching search items
+set incsearch  " Show search results as you type
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 " Save backups to ~/.vim/tmp
