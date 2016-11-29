@@ -2,8 +2,8 @@
 
 yellow='\033[1;33m'
 NC='\033[0m'  # No Color
-BASHRC_SNIPPET="if [[ -f ~/dots/.bashrc ]]; then source ~/dots/.bashrc fi";
-BASH_PROFILE_SNIPPET="if [[ -f ~/dots/.bash_profile ]]; then source ~/dots/.bash_profile fi";
+BASHRC_SNIPPET="if [[ -f ~/dots/.bashrc ]]; then source ~/dots/.bashrc; fi";
+BASH_PROFILE_SNIPPET="if [[ -f ~/dots/.bash_profile ]]; then source ~/dots/.bash_profile; fi";
 
 echo "Installing files to home directory..."
 for FILENAME in *
