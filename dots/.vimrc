@@ -1,4 +1,5 @@
 syntax on  " Syntax highlighting
+set background=light  " Use colors I like
 set ruler  " Show row/col info
 set nu  " Row numbers
 set backspace=2  " Sane backspace behavior
