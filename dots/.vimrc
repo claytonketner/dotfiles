@@ -20,6 +20,9 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType make setlocal shiftwidth=4 tabstop=4 noexpandtab
 
+let g:netrw_list_hide = '\.DS_Store,\.pyc$'
+
+""" Navigation, search
 set splitbelow  " Create new sp's below
 set splitright  " Create new vsp's to the right
 set laststatus=2  " Put info bar at bottom of screen
@@ -27,6 +30,7 @@ set hlsearch  " Highlight all matching search items
 set incsearch  " Show search results as you type
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 " Save backups to ~/.vim/tmp
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
