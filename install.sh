@@ -40,7 +40,7 @@ fi
 if [[ `git --version` == *"1.7"* ]]; then
     echo "Detected old git version that doesn't support includes."
     echo "Appending dots/.gitconfig to ~/.gitconfig"
-    echo dots/.gitconfig >> ~/.gitconfig
+    cat dots/.gitconfig >> ~/.gitconfig
     sed -i 's/default = simple/default = upstream/' ~/.gitconfig
 fi
 
