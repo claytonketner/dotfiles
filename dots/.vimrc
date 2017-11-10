@@ -19,6 +19,7 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType make setlocal shiftwidth=4 tabstop=4 noexpandtab
+autocmd FileType sh setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 let g:netrw_list_hide = '\.DS_Store,\.pyc$'
 

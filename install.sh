@@ -2,8 +2,9 @@
 
 yellow='\033[1;33m'
 NC='\033[0m'  # No Color
-BASHRC_SNIPPET="if [[ -f ~/dots/.bashrc ]]; then source ~/dots/.bashrc; fi";
-BASH_PROFILE_SNIPPET="if [[ -f ~/dots/.bash_profile ]]; then source ~/dots/.bash_profile; fi";
+BASHRC_SNIPPET="source ~/dots/.bashrc";
+BASH_PROFILE_SNIPPET="source ~/dots/.bash_profile";
+TMUX_CONF_SNIPPER="source ~/dots/.tmux.conf"
 
 echo "Installing files to home directory..."
 for FILENAME in *
@@ -35,6 +36,15 @@ if ! $(fgrep -q "$BASH_PROFILE_SNIPPET" ~/.bash_profile); then
     echo $BASH_PROFILE_SNIPPET >> ~/.bash_profile
 else
     echo "Leaving bash_profile as is."
+fi
+if ! [[ -f ~/.tmux.conf ]]; then
+	touch ~/.tmux.conf
+fi
+if ! $(fgrep -q "$TMUX_CONF_SNIPPET" ~/.bash_profile); then
+    echo "Adding \"$TMUX_CONF_SNIPPET\" to ~/.tmux.conf"
+    echo $TMUX_CONF_SNIPPET >> ~/.tmux.conf
+else
+    echo "Leaving tmux.conf as is."
 fi
 
 if [[ `git --version` == *"1.7"* ]]; then

@@ -21,6 +21,9 @@ alias ag='ag --pager "less -x4SRFX"'
 alias less='less -R'
 # Virtualenv
 alias de='deactivate'
+
+set -o ignoreeof  # Same as setting IGNOREEOF=10
+
 function venv
 {
     maxdepth=4
@@ -55,11 +58,19 @@ function diffadd {
 function brclean {
     # Delete all merged branches, excluding master and the current branch
     branches=$(git branch --merged master | grep -v master | grep -v \*)
-    if [[ ! $branches ]]; then
+    if [[ -z $branches ]]; then
         echo "No eligible branches to delete."
-        return
+        return 1
     fi
-    git branch -d $branches
+    printf "I'm going to delete these branches:\n$branches\n"
+    read -p "Is that OK? (y/n) " confirmation
+    if [[ "$confirmation" =~ ^[yY]$ ]]; then
+        git branch -d $branches
+        return 0
+    else
+        echo "Aborted"
+        return 2
+    fi
 }
 # Colorized man pages
 man() {
