@@ -5,6 +5,7 @@ NC='\033[0m'  # No Color
 BASHRC_SNIPPET="source ~/dots/.bashrc";
 BASH_PROFILE_SNIPPET="source ~/dots/.bash_profile";
 TMUX_CONF_SNIPPET="source ~/dots/.tmux.conf"
+VIMRC_SNIPPET="source ~/dots/.vimrc"
 
 echo "Installing files to home directory..."
 for FILENAME in *
@@ -37,12 +38,17 @@ if ! $(fgrep -q "$BASH_PROFILE_SNIPPET" ~/.bash_profile); then
 else
     echo "Leaving bash_profile as is."
 fi
-if ! [[ -f ~/.tmux.conf ]]; then
-	touch ~/.tmux.conf
-fi
-if ! $(fgrep -q "$TMUX_CONF_SNIPPET" ~/.bash_profile); then
+if ! $(fgrep -q "$TMUX_CONF_SNIPPET" ~/.tmux.conf); then
+    touch ~/.tmux.conf
     echo "Adding \"$TMUX_CONF_SNIPPET\" to ~/.tmux.conf"
     echo $TMUX_CONF_SNIPPET >> ~/.tmux.conf
+else
+    echo "Leaving tmux.conf as is."
+fi
+if ! $(fgrep -q "$VIMRC_SNIPPET" ~/.vimrc); then
+    touch ~/.vimrc
+    echo "Adding \"$VIMRC_SNIPPET\" to ~/.vimrc"
+    echo $VIMRC_SNIPPET >> ~/.vimrc
 else
     echo "Leaving tmux.conf as is."
 fi

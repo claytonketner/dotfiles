@@ -4,7 +4,7 @@ fi
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
-export TERM=xterm-256color
+export TERM=xterm
 #
 # Colors
 #
@@ -26,3 +26,8 @@ if [ -f ~/dots/.git-completion.bash ]; then
 fi
 # Global git ignore
 git config --global core.excludesfile ~/dots/.gitignore
+
+# Disable OSX alternate character popup when holding a keyboard key
+if [[ $(uname) == 'Darwin' ]]; then
+    defaults write -g ApplePressAndHoldEnabled -bool false
+fi
