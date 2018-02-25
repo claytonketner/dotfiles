@@ -84,3 +84,5 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
             man "$@"
 }
+# Autocomplete ssh commands based on known_hosts file
+complete -W "$(cat ~/.ssh/known_hosts | awk -F , '{print $1}' | grep '.com' | awk '{print $1}')" ssh
