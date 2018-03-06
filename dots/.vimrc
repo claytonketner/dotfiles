@@ -10,8 +10,8 @@ set shiftwidth=4  " Set block indentation shifting
 set expandtab  " Use spaces for indentation
 set autoindent  " Match indentation of previous line
 " Highlight if line is >80 cols
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+highlight PEP8LineLength ctermbg=magenta ctermfg=white
+match PEP8LineLength /\%>79v.\+/
 " Filetype-specific tab settings
 autocmd FileType text setlocal shiftwidth=2 tabstop=2
 autocmd FileType pp setlocal shiftwidth=2 tabstop=2
