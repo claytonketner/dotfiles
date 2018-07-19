@@ -14,6 +14,7 @@ highlight PEP8LineLength ctermbg=magenta ctermfg=white
 match PEP8LineLength /\%>79v.\+/
 " Filetype-specific tab settings
 autocmd FileType text setlocal shiftwidth=2 tabstop=2
+autocmd BufNewFile,BufRead *.pp set ft=pp syntax=conf
 autocmd FileType pp setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
@@ -36,7 +37,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 set cursorline  " Highlight current line
-set shellcmdflag=-ic  " Make vim shell interactive
+"set shellcmdflag=-ic  " Make vim shell interactive
 " Plugin stuff
 execute pathogen#infect()
 autocmd BufWritePost *.py call Flake8()  " Run flake8 on save
