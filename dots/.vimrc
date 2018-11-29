@@ -6,6 +6,7 @@ set backspace=2  " Sane backspace behavior
 
 """ Tabs
 set tabstop=4  " Set tab size to 4
+set softtabstop=4  " Treat space tabs like normal tabs
 set shiftwidth=4  " Set block indentation shifting
 set expandtab  " Use spaces for indentation
 set autoindent  " Match indentation of previous line
@@ -13,12 +14,12 @@ set autoindent  " Match indentation of previous line
 highlight PEP8LineLength ctermbg=magenta ctermfg=white
 match PEP8LineLength /\%>79v.\+/
 " Filetype-specific tab settings
-autocmd FileType text setlocal shiftwidth=2 tabstop=2
+autocmd FileType text setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.pp set ft=pp syntax=conf
-autocmd FileType pp setlocal shiftwidth=2 tabstop=2
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
+autocmd FileType pp setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType make setlocal shiftwidth=4 tabstop=4 noexpandtab
 autocmd FileType sh setlocal shiftwidth=4 tabstop=4 noexpandtab
 

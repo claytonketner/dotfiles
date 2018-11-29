@@ -118,6 +118,7 @@ function wtf {
 	if [[ $? = 0 ]]; then
 		wtf_text=`tail -n +5 $wtf_file`  # Omit the text in the first few lines
 		echo "$wtf_text"
+		echo ""
 		return 0
 	fi
 	echo "WTF file not found. Maybe make one with \`mkwtf\`?"
