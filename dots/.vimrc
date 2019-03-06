@@ -11,8 +11,7 @@ set shiftwidth=4  " Set block indentation shifting
 set expandtab  " Use spaces for indentation
 set autoindent  " Match indentation of previous line
 " Highlight if line is >80 cols
-highlight PEP8LineLength ctermbg=magenta ctermfg=white
-match PEP8LineLength /\%>79v.\+/
+autocmd FileType python match Error /\%>79v.\+/
 " Filetype-specific tab settings
 autocmd FileType text setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.pp set ft=pp syntax=conf
