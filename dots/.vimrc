@@ -3,6 +3,7 @@ set background=light  " Use colors I like
 set ruler  " Show row/col info
 set number relativenumber  " Hybrid row numbers
 set backspace=2  " Sane backspace behavior
+set noesckeys  " Disable arrow keys in insert mode, which prevents the delay when using o/O to insert a new line
 
 """ Tabs
 set tabstop=4  " Set tab size to 4
