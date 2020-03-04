@@ -11,8 +11,8 @@ set softtabstop=4  " Treat space tabs like normal tabs
 set shiftwidth=4  " Set block indentation shifting
 set expandtab  " Use spaces for indentation
 set autoindent  " Match indentation of previous line
-" Highlight if line is >80 cols
-autocmd FileType python match Error /\%>79v.\+/
+" Highlight if line is >100 cols
+autocmd FileType python match Error /\%>99v.\+/
 " Filetype-specific tab settings
 autocmd FileType text setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.pp set ft=pp syntax=conf
@@ -41,5 +41,4 @@ set cursorline  " Highlight current line
 "set shellcmdflag=-ic  " Make vim shell interactive
 " Plugin stuff
 execute pathogen#infect()
-autocmd BufWritePost *.py call Flake8()  " Run flake8 on save
 let g:vim_json_syntax_conceal = 0  " Don't do cute quote hiding for json

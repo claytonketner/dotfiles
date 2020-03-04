@@ -13,10 +13,14 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 #
 # PATHs
 #
-export PATH=$PATH:~/bin
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PATH:~/bin"
+export PATH="$PATH:$PYENV_ROOT/bin"
 export WORKON_HOME=~/.envs
 mkdir -p $WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh
+if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+	source /usr/local/bin/virtualenvwrapper.sh
+fi
 #
 # Other
 #
@@ -26,6 +30,8 @@ if [ -f ~/dots/.git-completion.bash ]; then
 fi
 # Global git ignore
 git config --global core.excludesfile ~/dots/.gitignore
+
+eval "$(pyenv init -)"  # brew install pyenv
 
 # Disable OSX alternate character popup when holding a keyboard key
 if [[ $(uname) == 'Darwin' ]]; then
