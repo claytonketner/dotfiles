@@ -62,21 +62,28 @@ function diffadd {
     eval $cmd
 }
 function brclean {
-    # Delete all merged branches, excluding master and the current branch
-    branches=$(git branch --merged master | grep -v master | grep -v \*)
-    if [[ -z $branches ]]; then
-        echo "No eligible branches to delete."
-        return 1
-    fi
-    printf "I'm going to delete these branches:\n$branches\n"
-    read -p "Is that OK? (y/n) " confirmation
-    if [[ "$confirmation" =~ ^[yY]$ ]]; then
-        git branch -d $branches
-        return 0
-    else
-        echo "Aborted"
-        return 2
-    fi
+	# Copied/modified from https://github.com/not-an-aardvark/git-delete-squashed
+    git checkout -q master
+	branches=$(git for-each-ref refs/heads/ "--format=%(refname:short)")
+	branches_to_delete=""
+	while read branch; do
+		mergeBase=$(git merge-base master $branch)
+		if [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]]; then
+			branches_to_delete="$branches_to_delete $branch"
+		fi
+	done <<< "$branches"
+	echo "I'm going to delete these branches:"
+	for branch in $branches_to_delete; do
+		echo -e "\t$branch"
+	done
+	read -p "Is that OK? (y/n) " confirmation
+	if [[ "$confirmation" =~ ^[yY]$ ]]; then
+		git branch -D $branches_to_delete
+		return 0
+	else
+		echo "Aborted"
+		return 2
+	fi
 }
 # Colorized man pages
 man() {
