@@ -75,9 +75,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "Installing vim plugins..."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+mkdir -p ~/.vim/pack/tpope/start
+cd ~/.vim/pack/tpope/start
+git clone https://tpope.io/vim/fugitive.git
+vim -u NONE -c "helptags fugitive/doc" -c q
 cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-fugitive.git
-vim -u NONE -c "helptags vim-fugitive/doc" -c q
 git clone git@github.com:tpope/vim-surround.git
 git clone git@github.com:tpope/vim-repeat.git
 git clone git@github.com:tpope/vim-markdown.git

@@ -16,6 +16,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PATH:~/bin"
 export PATH="$PATH:$PYENV_ROOT/bin"
+export PATH="$PATH:/usr/local/opt/postgresql@9.6/bin"
 export WORKON_HOME=~/.envs
 mkdir -p $WORKON_HOME
 if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then

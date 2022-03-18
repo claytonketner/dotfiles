@@ -6,6 +6,7 @@ else
     alias ls='ls --color -h --group-directories-first'
 fi
 hash -r
+set +H  # Turn off history expansion via `!`
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -lah'
@@ -39,6 +40,8 @@ function venv
     for file in $( find . -type f -maxdepth $maxdepth -regex .*env.*/bin/activate | head -n 1 ); do
         echo source $file
         source $file
+		echo pyenv rehash
+		pyenv rehash
         break
     done
 }
