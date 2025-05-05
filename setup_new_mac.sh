@@ -9,3 +9,4 @@ brew install vim
 brew install thefuck
 brew install pyenv
 brew install the_silver_searcher
+brew install --cask mos  # Better scrolling with a scroll wheel mouse
