@@ -25,26 +25,10 @@ alias de='deactivate'
 
 set -o ignoreeof  # Same as setting IGNOREEOF=10
 
-eval $(thefuck --alias)  # brew install thefuck
-
 if [ -f ~/wtf.bash ]; then
    source ~/wtf.bash
 fi
 
-function venv
-{
-    maxdepth=4
-    if [ $# -eq 1 ]; then
-        maxdepth=$1
-    fi
-    for file in $( find . -type f -maxdepth $maxdepth -regex .*env.*/bin/activate | head -n 1 ); do
-        echo source $file
-        source $file
-		echo pyenv rehash
-		pyenv rehash
-        break
-    done
-}
 # Git
 function diffadd {
     # Runs git add on the file(s) you just git diff-ed

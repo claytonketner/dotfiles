@@ -1,10 +1,10 @@
 [user]
-	name = claytonketner
-	email = claytonketner@me.com
+    name = claytonketner
+    email = claytonketner@me.com
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 [push]
-	default = simple
+    default = simple
 [alias]
     st = status
     co = checkout
@@ -16,6 +16,6 @@
     # Open all merge conflicts in vim
     fix = "!f() { vim -p `git diff --name-only --diff-filter=U`; }; f"
 [color]
-	ui = true
+    ui = true
 [core]
-	excludesfile = ~/dots/.gitignore
+    excludesfile = ~/dots/.gitignore

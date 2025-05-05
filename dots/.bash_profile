@@ -18,6 +18,8 @@ export PATH="$PATH:~/bin"
 export PATH="$PATH:$PYENV_ROOT/bin"
 export PATH="$PATH:/usr/local/opt/postgresql@9.6/bin"
 export WORKON_HOME=~/.envs
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export LDFLAGS=-L/usr/local/opt/openssl/lib
 mkdir -p $WORKON_HOME
 if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
 	source /usr/local/bin/virtualenvwrapper.sh
@@ -29,8 +31,6 @@ fi
 if [ -f ~/dots/.git-completion.bash ]; then
     . ~/dots/.git-completion.bash
 fi
-# Global git ignore
-git config --global core.excludesfile ~/dots/.gitignore
 
 eval "$(pyenv init -)"  # brew install pyenv
 
